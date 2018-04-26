@@ -26,21 +26,7 @@ public class View implements java.util.Observer {
 
     public View(){}
 
-    public void update(Observable obs, Object obj) {
-
-
-        if (!error) {
-            // System.out.println ("View      : Observable is " + obs.getClass() +
-            // ", object passed is " + obj.getClass());
-
-            // uncomment next line to do Model Pull
-            //myTextField.setText("" + model.getValue());
-
-            // if Push
-//            inputTextField.setText("" + ((Integer) obj).intValue());
-        }
-
-    }
+    public void update(Observable obs, Object obj) {}
 
     public void addController(ActionListener controller) {
         //System.out.println("View      : adding controller");

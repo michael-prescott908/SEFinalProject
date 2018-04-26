@@ -12,7 +12,6 @@ public class AddView extends View {
 
     public AddView(int vertPos){
         model = new Model();
-        model.setValue(10);
 
         frame = new JFrame("Inventory Tracking Service");
         frame.add("North", new Label("Please fill out information to add new item"));
@@ -60,7 +59,6 @@ public class AddView extends View {
     }
 
     public void addController(ActionListener controller) {
-        //System.out.println("View      : adding controller");
         Add.addActionListener(controller);
         Cancel.addActionListener(controller);
     }

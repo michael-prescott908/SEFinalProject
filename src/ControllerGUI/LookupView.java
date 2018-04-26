@@ -9,7 +9,6 @@ public class LookupView extends View {
     private JButton Cancel;
     public LookupView(int vertPos){
         model = new Model();
-        model.setValue(10);
 
         frame = new JFrame("Inventory Tracking Service");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +42,6 @@ public class LookupView extends View {
     }
 
     public void addController(ActionListener controller) {
-        //System.out.println("View      : adding controller");
         Cancel.addActionListener(controller);
     }
 }

@@ -7,16 +7,10 @@ import java.awt.event.ActionListener;
 
 public class MainView extends View {
 
-    private String [] options = {
-        "Add Item",
-        "Lookup Item",
-        "Exit"
-    };
     private JTextArea textArea;
 
     public MainView(int vertPos){
         model = new Model();
-        model.setValue(10);
 
         textArea = new JTextArea("Welcome to the Inventory Tracker.\n" +
                                 "This program manages the inventory of\n" +
@@ -57,7 +51,6 @@ public class MainView extends View {
     }
 
     public void addController(ActionListener controller) {
-        //System.out.println("View      : adding controller");
         buttonAddItem.addActionListener(controller);
         buttonLookup.addActionListener(controller);
         buttonRemove.addActionListener(controller);

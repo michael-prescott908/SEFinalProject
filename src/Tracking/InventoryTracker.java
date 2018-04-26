@@ -8,7 +8,6 @@ public class InventoryTracker {
     private static RunGUI rgui;
 
     public static void main(String args[]){
-        System.out.println(STATE);
         rgui = new RunGUI(STATE);
     }
 

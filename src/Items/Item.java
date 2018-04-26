@@ -1,23 +1,23 @@
 package Items;
 
 public abstract class Item {
-    protected Integer price;
+    protected Float price;
     protected String name;
     protected Integer serial;
 
     public Item(){}
 
-    public Item(Integer price, String name, Integer serial) {
+    public Item(Float price, String name, Integer serial) {
         this.price = price;
         this.name = name;
         this.serial = serial;
     }
 
-    public Integer getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 
 public class Database {
-    public static void main(String args[]) throws SQLException{
+    public static void main(String args[]){
         try {
             if (tablesExists()) {
                 dropTable();
@@ -133,23 +133,27 @@ public class Database {
      * constructs an insertion query and inserts the CSV data into the table
      */
     public static void insert(String [] strArr, Connection c){
+        /*String sqlCommand = "INSERT INTO INVENTORY (Price, Name, Serial) VALUES ( " +
+                strArr[0] + ", \'" + strArr[1] + "\', " + strArr[2] + ")";*/
         String sqlCommand = "INSERT INTO INVENTORY (Price, Name, Serial) VALUES ( " +
-                strArr[0] + ", \'" + strArr[1] + "\', " + strArr[2] + ")";
-        Statement stmt;
+                "?, ?, ?)";
         try {
-            stmt = c.createStatement();
-            stmt.executeUpdate(sqlCommand);
+            PreparedStatement ps = c.prepareStatement(sqlCommand);
+            ps.setFloat(1, Float.parseFloat(strArr[0]));
+            ps.setString(2, strArr[1]);
+            ps.setInt(3, Integer.parseInt(strArr[2]));
+            ps.executeUpdate();
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
     }
 
     public static void remove(Integer serial, Connection c){
-        String sqlCommand = "DELETE FROM INVENTORY WHERE Serial=" + serial;
-        Statement stmt;
+        String sqlCommand = "DELETE FROM INVENTORY WHERE Serial=?";
         try{
-            stmt = c.createStatement();
-            stmt.executeUpdate(sqlCommand);
+            PreparedStatement ps = c.prepareStatement(sqlCommand);
+            ps.setInt(1, serial);
+            ps.executeUpdate();
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }

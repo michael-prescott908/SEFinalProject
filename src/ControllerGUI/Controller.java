@@ -13,23 +13,15 @@ public class Controller implements java.awt.event.ActionListener {
 
     private Model model;
     private View view;
-    private String state = "Basic";
-    private int localValue = 1;
 
-    /*public Controller() {
-        System.out.println ("Controller()");
-    }
-*/
+    public Controller() {}
+
     public void actionPerformed(ActionEvent e){
 
-        System.out.println ("Controller: Event " + e.getActionCommand());
-
         if("Add Item".equals(e.getActionCommand())) {
-            System.out.println("I would like to add an item");
             InventoryTracker.setRgui(e.getActionCommand());
         }
         else if("Item Lookup".equals(e.getActionCommand())) {
-            System.out.println("I would like to lookup and item");
             InventoryTracker.setRgui(e.getActionCommand());
         }
         else if("Exit".equals(e.getActionCommand())) {
@@ -39,7 +31,6 @@ public class Controller implements java.awt.event.ActionListener {
             view.getFrame().dispose();
         }
         else if("Delete Item".equals(e.getActionCommand())){
-            System.out.println("I would like to delete an item");
             InventoryTracker.setRgui(e.getActionCommand());
         }
         else if("Insert".equals(e.getActionCommand())){
@@ -65,12 +56,10 @@ public class Controller implements java.awt.event.ActionListener {
     }
 
     public void addModel(Model m){
-        //System.out.println("Controller: adding model");
         this.model = m;
     }
 
     public void addView(View v){
-        System.out.println("Controller: adding view");
         this.view = v;
     }
 
@@ -81,9 +70,4 @@ public class Controller implements java.awt.event.ActionListener {
     public void addView(LookupView v){
         this.view = v;
     }
-
-    public void initModel(int x){
-        model.setValue(x);
-    }
-
 }

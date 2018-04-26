@@ -1,7 +1,5 @@
 package ControllerGUI;
 
-//Model doesn't know about View or Controller
-
 public class Model extends java.util.Observable {
 
     private int counter;

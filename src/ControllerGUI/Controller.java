@@ -3,6 +3,7 @@ package ControllerGUI;
 import Tracking.InventoryTracker;
 
 import java.awt.event.ActionEvent;
+import javax.swing.*;
 
 public class Controller implements java.awt.event.ActionListener {
 
@@ -21,14 +22,17 @@ public class Controller implements java.awt.event.ActionListener {
 
         if("Add Item".equals(e.getActionCommand())) {
             System.out.println("I would like to add an item");
-            RunGUI rgui = new RunGUI(e.getActionCommand());
+            InventoryTracker.setRgui(e.getActionCommand());
         }
         else if("Item Lookup".equals(e.getActionCommand())) {
             System.out.println("I would like to lookup and item");
-            RunGUI rgui = new RunGUI(e.getActionCommand());
+            InventoryTracker.setRgui(e.getActionCommand());
         }
         else if("Exit".equals(e.getActionCommand())) {
             System.exit(1);
+        }
+        else if("Cancel".equals(e.getActionCommand())){
+
         }
     }
 

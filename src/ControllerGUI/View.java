@@ -71,5 +71,4 @@ public class View implements java.util.Observer {
         m.addObserver(this);
         c.addView(this);
     }
-
 }

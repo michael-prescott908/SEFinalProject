@@ -1,6 +1,10 @@
 package ControllerGUI;
 
 import Factory.CreateFrame;
+import Items.Item;
+import Table.MyTableModel;
+
+import java.util.HashSet;
 
 public class RunGUI {
 
@@ -13,7 +17,7 @@ public class RunGUI {
         view = CreateFrame.createFrame(command);
         System.out.println(view.getClass());
         Model model = new Model();
-        //model.addObserver(view);
+        model.addObserver(view);
 
         Controller controller = new Controller();
         controller.addModel(model);

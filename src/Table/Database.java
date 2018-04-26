@@ -14,7 +14,7 @@ public class Database {
             }
 
             createTable();
-           String temp = "10.12,Shirt,55612";
+            String temp = "10.12,Shirt,55612";
             Connection eConnection = connect();
             BufferedReader br;
 
@@ -133,8 +133,6 @@ public class Database {
      * constructs an insertion query and inserts the CSV data into the table
      */
     public static void insert(String [] strArr, Connection c){
-        /*String sqlCommand = "INSERT INTO INVENTORY (Price, Name, Serial) VALUES ( " +
-                strArr[0] + ", \'" + strArr[1] + "\', " + strArr[2] + ")";*/
         String sqlCommand = "INSERT INTO INVENTORY (Price, Name, Serial) VALUES ( " +
                 "?, ?, ?)";
         try {

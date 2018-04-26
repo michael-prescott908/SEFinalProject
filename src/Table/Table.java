@@ -1,7 +1,5 @@
 package Table;
 
-import Items.Item;
-
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
@@ -11,12 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Vector;
 
 public class Table extends JPanel{
     private Boolean DEBUG = false;
@@ -34,7 +26,7 @@ public class Table extends JPanel{
         table.setRowSorter(sorter);
         table.setAutoCreateRowSorter(true);
 
-        table.setPreferredScrollableViewportSize(new Dimension(500, 100));
+        table.setPreferredScrollableViewportSize(new Dimension(500, 400));
         table.setFillsViewportHeight(true);
 
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -49,10 +41,6 @@ public class Table extends JPanel{
                         } else {
                             int modelRow =
                                     table.convertRowIndexToModel(viewRow);
-                            statusText.setText(
-                                    String.format("Selected Row in view: %d. " +
-                                                    "Selected Row in model: %d.",
-                                            viewRow, modelRow));
                         }
                     }
                 }
@@ -61,12 +49,11 @@ public class Table extends JPanel{
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane);
 
-        //Create a separate form for filterText and statusText
         JPanel form = new JPanel(new SpringLayout());
         JLabel l1 = new JLabel("Filter Text:");
         form.add(l1);
         filterText = new JTextField();
-        //Whenever filterText changes, invoke newFilter.
+
         filterText.getDocument().addDocumentListener(
                 new DocumentListener() {
                     public void changedUpdate(DocumentEvent e) {
@@ -133,38 +120,5 @@ public class Table extends JPanel{
             return;
         }
         sorter.setRowFilter(rf);
-    }
-
-    public static void main(String[] args){
-        BufferedReader br = null;
-        String line;
-        Vector<Item> items = new Vector<Item>();
-        Table table = new Table();
-
-        try{
-            br = new BufferedReader(new FileReader("animals.csv"));
-            br.readLine();
-            while((line = br.readLine()) != null){
-                //anim.add(CreateClass.returnClass(line.split(",")));
-            }
-            //table.createAndShowGUI(anim);
-            javax.swing.SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    //createAndShowGUI(anim);
-                }
-            });
-        } catch(FileNotFoundException e){
-            System.out.println(e.getMessage());
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-        } finally {
-            if(br != null){
-                try {
-                    br.close();
-                } catch (IOException e){
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
     }
 }

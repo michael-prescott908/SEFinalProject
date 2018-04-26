@@ -1,14 +1,10 @@
 package Table;
 
-import Items.Item;
-
 import javax.swing.table.AbstractTableModel;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Vector;
 
 public class MyTableModel extends AbstractTableModel{
@@ -16,13 +12,12 @@ public class MyTableModel extends AbstractTableModel{
     private Vector <Vector> vec;
 
     public MyTableModel(){
-        columnNames = new Vector<String>();
+        columnNames = new Vector<>();
         vec = new Vector<>();
         columnNames.add("Price");
         columnNames.add("Name");
         columnNames.add("Serial");
 
-        Vector<Item> itemVector = new Vector<>();
         vec = new Vector <>();
 
         try {

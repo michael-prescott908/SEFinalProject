@@ -1,10 +1,13 @@
 package ControllerGUI;
 
+import Table.Database;
 import Tracking.InventoryTracker;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
 import javax.swing.*;
+import javax.xml.crypto.Data;
 
 public class Controller implements java.awt.event.ActionListener {
 
@@ -34,6 +37,16 @@ public class Controller implements java.awt.event.ActionListener {
         }
         else if("Cancel".equals(e.getActionCommand())){
             view.getFrame().dispose();
+        }
+        else if("Insert".equals(e.getActionCommand())){
+            String text [] = {
+                    view.getAddPrice().getText(),
+                    view.getAddName().getText(),
+                    view.getAddSerial().getText()
+            };
+
+            Connection conn = Database.connect();
+            Database.insert(text, conn);
         }
     }
 

@@ -13,10 +13,10 @@ public class Database {
                 //tablesExists();
             //}*/
 
-            //createTable();
-            String temp = "10.12,Shirt,55612";
+            createTable();
+           /* String temp = "10.12,Shirt,55612";
             String[] strArr = temp.split(",");
-            Connection eConnection = connect();
+            Connection eConnection = connect();*/
             //Connection eConnection = connect();
             //BufferedReader br;
 
@@ -26,7 +26,7 @@ public class Database {
                 String str;
                 while((str = br.readLine()) != null){
                     String [] strArr = str.split(",");*/
-                    insert(strArr, eConnection);
+                    //insert(strArr, eConnection);
                /* }
                 br.close();
             } catch (IOException e){

@@ -19,6 +19,9 @@ public class View implements java.util.Observer {
     protected Model model;
     protected JComboBox comboBox;
     protected JFrame frame;
+    protected JTextField addPrice;
+    protected JTextField addName;
+    protected JTextField addSerial;
 
     protected boolean error = false;
 
@@ -75,5 +78,17 @@ public class View implements java.util.Observer {
 
     public JFrame getFrame(){
         return frame;
+    }
+
+    public JTextField getAddPrice() {
+        return addPrice;
+    }
+
+    public JTextField getAddName() {
+        return addName;
+    }
+
+    public JTextField getAddSerial() {
+        return addSerial;
     }
 }

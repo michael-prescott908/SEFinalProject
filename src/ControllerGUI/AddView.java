@@ -3,10 +3,13 @@ package ControllerGUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class AddView extends View {
     private JButton Add;
     private JButton Cancel;
+
     public AddView(int vertPos){
         model = new Model();
         model.setValue(10);
@@ -14,13 +17,30 @@ public class AddView extends View {
         frame = new JFrame("Inventory Tracking Service");
         frame.add("North", new Label("Please fill out information to add new item"));
 
-        JPanel panel = new JPanel();
-        Add = new JButton("Add Item");
-        panel.add(Add);
-        Cancel = new JButton("Cancel");
-        panel.add(Cancel);
 
-        frame.add("South", panel);
+        addPrice = new JTextField();
+        addName = new JTextField();
+        addSerial = new JTextField();
+
+        JPanel panel1 = new JPanel(new GridLayout(3,2));
+        panel1.add(new JLabel("Price: "));
+        panel1.add(addPrice);
+        panel1.add(new JLabel("Name: "));
+        panel1.add(addName);
+        panel1.add(new JLabel("Serial: "));
+        panel1.add(addSerial);
+
+        panel1.setSize(200, 100);
+        panel1.setLocation(150, 100);
+
+        JPanel panel2 = new JPanel();
+        Add = new JButton("Insert");
+        panel2.add(Add);
+        Cancel = new JButton("Cancel");
+        panel2.add(Cancel);
+
+        frame.add("Center", panel1);
+        frame.add("South", panel2);
 
         JLabel yellowLabel = new JLabel();
         yellowLabel.setOpaque(true);

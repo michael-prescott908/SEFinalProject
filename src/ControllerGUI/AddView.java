@@ -11,7 +11,7 @@ public class AddView extends View {
         model = new Model();
         model.setValue(10);
 
-        JFrame frame = new JFrame("Inventory Tracking Service");
+        frame = new JFrame("Inventory Tracking Service");
         frame.add("North", new Label("Please fill out information to add new item"));
 
         JPanel panel = new JPanel();

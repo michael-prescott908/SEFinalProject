@@ -18,6 +18,7 @@ public class View implements java.util.Observer {
     protected JButton buttonExit;
     protected Model model;
     protected JComboBox comboBox;
+    protected JFrame frame;
 
     protected boolean error = false;
 
@@ -70,5 +71,9 @@ public class View implements java.util.Observer {
     public void sendClass(Controller c, Model m){
         m.addObserver(this);
         c.addView(this);
+    }
+
+    public JFrame getFrame(){
+        return frame;
     }
 }

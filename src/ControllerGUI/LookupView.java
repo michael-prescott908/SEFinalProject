@@ -11,7 +11,7 @@ public class LookupView extends View {
         model = new Model();
         model.setValue(10);
 
-        JFrame frame = new JFrame("Inventory Tracking Service");
+        frame = new JFrame("Inventory Tracking Service");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Table newPane = new Table();
         newPane.setOpaque(true);

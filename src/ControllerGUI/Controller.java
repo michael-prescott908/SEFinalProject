@@ -3,6 +3,7 @@ package ControllerGUI;
 import Tracking.InventoryTracker;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 public class Controller implements java.awt.event.ActionListener {
@@ -32,7 +33,7 @@ public class Controller implements java.awt.event.ActionListener {
             System.exit(1);
         }
         else if("Cancel".equals(e.getActionCommand())){
-
+            view.getFrame().dispose();
         }
     }
 
@@ -42,7 +43,7 @@ public class Controller implements java.awt.event.ActionListener {
     }
 
     public void addView(View v){
-        //System.out.println("Controller: adding view");
+        System.out.println("Controller: adding view");
         this.view = v;
     }
 

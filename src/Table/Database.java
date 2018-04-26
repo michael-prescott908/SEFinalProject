@@ -14,7 +14,7 @@ public class Database {
             //}*/
 
             //createTable();
-            String temp = "5.02,Tshirt,9591923";
+            String temp = "10.12,Shirt,55612";
             String[] strArr = temp.split(",");
             Connection eConnection = connect();
             //Connection eConnection = connect();

@@ -13,7 +13,6 @@ public class MainView extends View {
         "Exit"
     };
     private JTextArea textArea;
-    public JFrame frame;
 
     public MainView(int vertPos){
         model = new Model();
@@ -21,7 +20,7 @@ public class MainView extends View {
 
         textArea = new JTextArea("Welcome to the Inventory Tracker.\n" +
                                 "This program manages the inventory of\n" +
-                                "a department store through an XML database!", 5, 20);
+                                "a department store through a SQL database!", 5, 20);
         frame = new JFrame("Inventory Tracking Service");
         frame.add("North", new JLabel("Welcome to the Inventory Tracker, please choose an option"));
 

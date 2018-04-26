@@ -17,7 +17,7 @@ public class MyTableModel extends AbstractTableModel{
 
     public MyTableModel(){
         columnNames = new Vector<String>();
-        vec = new Vector<Vector>();
+        vec = new Vector<>();
         columnNames.add("Price");
         columnNames.add("Name");
         columnNames.add("Serial");

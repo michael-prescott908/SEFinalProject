@@ -20,6 +20,10 @@ public class InventoryTracker {
         return STATE;
     }
 
+    public static RunGUI getRgui() {
+        return rgui;
+    }
+
     public static void setRgui(String command){
         rgui = new RunGUI(command);
     }

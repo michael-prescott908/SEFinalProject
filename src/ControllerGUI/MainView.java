@@ -30,10 +30,10 @@ public class MainView extends View {
         panel.add(buttonAddItem);
         buttonLookup = new JButton("Item Lookup");
         panel.add(buttonLookup);
+        buttonRemove = new JButton("Delete Item");
+        panel.add(buttonRemove);
         buttonExit = new JButton("Exit");
         panel.add(buttonExit);
-        //panel.add(comboBox);
-        //textArea.setBounds(20,20, 20, 5);
         panel.add(textArea, BorderLayout.LINE_START);
 
         frame.add("South", panel);
@@ -45,10 +45,9 @@ public class MainView extends View {
         frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
 
         frame.addWindowListener(new MainView.CloseListener());
-        frame.setSize(375, 300);
+        frame.setSize(500, 300);
         frame.setLocation(100, vertPos);
 
-        //frame.pack();
         frame.setVisible(true);
     }
 
@@ -61,6 +60,7 @@ public class MainView extends View {
         //System.out.println("View      : adding controller");
         buttonAddItem.addActionListener(controller);
         buttonLookup.addActionListener(controller);
+        buttonRemove.addActionListener(controller);
         buttonExit.addActionListener(controller);
     }
 }

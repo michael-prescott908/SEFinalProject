@@ -38,6 +38,10 @@ public class Controller implements java.awt.event.ActionListener {
         else if("Cancel".equals(e.getActionCommand())){
             view.getFrame().dispose();
         }
+        else if("Delete Item".equals(e.getActionCommand())){
+            System.out.println("I would like to delete an item");
+            InventoryTracker.setRgui(e.getActionCommand());
+        }
         else if("Insert".equals(e.getActionCommand())){
             String text [] = {
                     view.getAddPrice().getText(),
@@ -47,6 +51,16 @@ public class Controller implements java.awt.event.ActionListener {
 
             Connection conn = Database.connect();
             Database.insert(text, conn);
+
+            view.getAddPrice().setText("");
+            view.getAddName().setText("");
+            view.getAddSerial().setText("");
+        }
+        else if("Remove".equals(e.getActionCommand())){
+            String temp = view.getRemSerial().getText();
+            Connection conn = Database.connect();
+            Database.remove(Integer.parseInt(temp), conn);
+            view.getRemSerial().setText("");
         }
     }
 

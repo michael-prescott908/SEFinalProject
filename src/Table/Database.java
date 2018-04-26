@@ -7,37 +7,33 @@ import java.sql.*;
 
 public class Database {
     public static void main(String args[]) throws SQLException{
-        //try {
-            //if (tablesExists()) {
-                //dropTable();
-                //tablesExists();
-            //}*/
+        try {
+            if (tablesExists()) {
+                dropTable();
+                tablesExists();
+            }
 
             createTable();
-           /* String temp = "10.12,Shirt,55612";
-            String[] strArr = temp.split(",");
-            Connection eConnection = connect();*/
-            //Connection eConnection = connect();
-            //BufferedReader br;
+           String temp = "10.12,Shirt,55612";
+            Connection eConnection = connect();
+            BufferedReader br;
 
-            /*try{
+            try{
                 br = new BufferedReader(new FileReader(args[0]));
                 br.readLine();
                 String str;
                 while((str = br.readLine()) != null){
-                    String [] strArr = str.split(",");*/
-                    //insert(strArr, eConnection);
-               /* }
+                    String [] strArr = str.split(",");
+                    insert(strArr, eConnection);
+               }
                 br.close();
             } catch (IOException e){
                 e.getMessage();
             }
 
-        } finally {
-            *//*catch(SQLException e){
+        } catch(SQLException e){
             System.out.println(e.getMessage());
-        }*//*
-        }*/
+        }
     }
 
     /**
@@ -144,6 +140,17 @@ public class Database {
             stmt = c.createStatement();
             stmt.executeUpdate(sqlCommand);
         }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void remove(Integer serial, Connection c){
+        String sqlCommand = "DELETE FROM INVENTORY WHERE Serial=" + serial;
+        Statement stmt;
+        try{
+            stmt = c.createStatement();
+            stmt.executeUpdate(sqlCommand);
+        } catch (SQLException e){
             System.out.println(e.getMessage());
         }
     }

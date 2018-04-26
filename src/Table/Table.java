@@ -126,14 +126,13 @@ public class Table extends JPanel{
     }
 
     private void newFilter(){
-        /*RowFilter<MyTableModel, Object> rf = null;
-        //If current expression doesn't parse, don't update.
+        RowFilter<MyTableModel, Object> rf = null;
         try {
             rf = RowFilter.regexFilter(filterText.getText(), 0);
         } catch (java.util.regex.PatternSyntaxException e) {
             return;
         }
-        sorter.setRowFilter(rf);*/
+        sorter.setRowFilter(rf);
     }
 
     public static void main(String[] args){

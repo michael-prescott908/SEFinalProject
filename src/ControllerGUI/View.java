@@ -10,18 +10,17 @@ import java.awt.event.ActionListener;
 
 public class View implements java.util.Observer {
 
-    protected TextField inputTextField;
     protected TextField myTextField;
-    protected TextField errTextField;
     protected JButton buttonAddItem;
     protected JButton buttonLookup;
     protected JButton buttonExit;
+    protected JButton buttonRemove;
     protected Model model;
-    protected JComboBox comboBox;
     protected JFrame frame;
     protected JTextField addPrice;
     protected JTextField addName;
     protected JTextField addSerial;
+    protected JTextField remSerial;
 
     protected boolean error = false;
 
@@ -47,6 +46,7 @@ public class View implements java.util.Observer {
         //System.out.println("View      : adding controller");
         buttonAddItem.addActionListener(controller);
         buttonLookup.addActionListener(controller);
+        buttonRemove.addActionListener(controller);
         buttonExit.addActionListener(controller);
     }
 
@@ -55,12 +55,14 @@ public class View implements java.util.Observer {
         error = false;
         buttonAddItem.setEnabled(true);
         buttonLookup.setEnabled(true);
+        buttonRemove.setEnabled(true);
         myTextField.setText(v);
     }
     public void setError(String v) {
         error = true;
         buttonAddItem.setEnabled(false);
         buttonLookup.setEnabled(false);
+        buttonRemove.setEnabled(false);
         myTextField.setText(v);
     }
 
@@ -90,5 +92,9 @@ public class View implements java.util.Observer {
 
     public JTextField getAddSerial() {
         return addSerial;
+    }
+
+    public JTextField getRemSerial(){
+        return remSerial;
     }
 }

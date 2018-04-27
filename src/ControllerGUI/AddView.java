@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
+/**
+ * Class: AddView
+ *  AddView inherits from View and provides the specialization for the
+ *  window for adding a product
+ */
 public class AddView extends View {
     private JButton Add;
     private JButton Cancel;
@@ -41,11 +46,11 @@ public class AddView extends View {
         frame.add("Center", panel1);
         frame.add("South", panel2);
 
-        JLabel yellowLabel = new JLabel();
-        yellowLabel.setOpaque(true);
-        yellowLabel.setBackground(new Color(145, 245, 215));
-        yellowLabel.setPreferredSize(new Dimension(200, 180));
-        frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+        JLabel jLabel = new JLabel();
+        jLabel.setOpaque(true);
+        jLabel.setBackground(new Color(145, 245, 215));
+        jLabel.setPreferredSize(new Dimension(200, 180));
+        frame.getContentPane().add(jLabel, BorderLayout.CENTER);
 
         frame.addWindowListener(new AddView.CloseListener());
         frame.setSize(500, 400);
@@ -53,11 +58,15 @@ public class AddView extends View {
         frame.setVisible(true);
     }
 
+    /**
+     * Use of the double dispatch pattern
+     */
     public void sendClass(Controller c, Model m){
         m.addObserver(this);
         c.addView(this);
     }
 
+    //Override of the addController method
     public void addController(ActionListener controller) {
         Add.addActionListener(controller);
         Cancel.addActionListener(controller);

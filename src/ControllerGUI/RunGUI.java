@@ -1,11 +1,14 @@
 package ControllerGUI;
 
 import Factory.CreateFrame;
-import Items.Item;
 import Table.MyTableModel;
 
 import java.util.HashSet;
 
+/**
+ * Class: RunGUI
+ *  RunGUI serves as an abstraction of the main function
+ */
 public class RunGUI {
     private View view;
 

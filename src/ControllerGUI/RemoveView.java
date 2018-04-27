@@ -4,6 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Class: RemoveView
+ *  RemoveView inherits from View and serves as
+ *  the window from removing and item from the table
+ */
 public class RemoveView extends View {
     private JButton Remove;
     private JButton Cancel;

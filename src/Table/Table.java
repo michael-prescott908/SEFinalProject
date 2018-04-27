@@ -10,6 +10,12 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Class: Table
+ *  Table inherits from JPanel and serves as a way
+ *  to easily create the layout for printing the
+ *  database table to the LookupView window
+ */
 public class Table extends JPanel{
     private Boolean DEBUG = false;
     private TableRowSorter<MyTableModel> sorter;

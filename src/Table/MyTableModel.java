@@ -7,6 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
+/**
+ * Class: MyTableModel
+ *  MyTableModel inherits from AbstractTableModel implementing
+ *  its methods and serves as the means of retrieving all
+ *  data from the table to print in LookupView
+ */
 public class MyTableModel extends AbstractTableModel{
     private Vector<String> columnNames;
     private Vector <Vector> vec;

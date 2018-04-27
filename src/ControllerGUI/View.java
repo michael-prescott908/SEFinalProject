@@ -8,6 +8,11 @@ import java.lang.Integer;
 import java.util.Observable;
 import java.awt.event.ActionListener;
 
+/**
+ * Class: View
+ *  View inherits from the Observer class and
+ *  serves as generic to the specialized Views
+ */
 public class View implements java.util.Observer {
 
     protected TextField myTextField;

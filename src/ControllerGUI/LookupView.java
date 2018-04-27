@@ -5,6 +5,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Class: LookupView
+ *  LookupView inherits from View and serves as the window
+ *  for viewing the table
+ */
 public class LookupView extends View {
     private JButton Cancel;
     public LookupView(int vertPos){
@@ -23,11 +28,11 @@ public class LookupView extends View {
 
         frame.add("South", panel);
 
-        JLabel yellowLabel = new JLabel();
-        yellowLabel.setOpaque(true);
-        yellowLabel.setBackground(new Color(145, 245, 215));
-        yellowLabel.setPreferredSize(new Dimension(200, 180));
-        frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+        JLabel jLabel = new JLabel();
+        jLabel.setOpaque(true);
+        jLabel.setBackground(new Color(145, 245, 215));
+        jLabel.setPreferredSize(new Dimension(200, 180));
+        frame.getContentPane().add(jLabel, BorderLayout.CENTER);
 
         frame.addWindowListener(new AddView.CloseListener());
         frame.setSize(500, 400);

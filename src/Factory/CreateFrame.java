@@ -2,6 +2,12 @@ package Factory;
 
 import ControllerGUI.*;
 
+/**
+ * Class: CreateFrame
+ *  CreateFrame serves as a factory for creating the different
+ *  types of Views and also serves as a singleton since there
+ *  is never more than one instance of CreateFrame
+ */
 public class CreateFrame {
     public static View createFrame(String command){
         View view = null;

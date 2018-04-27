@@ -5,6 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Class: Database
+ *  Database serves as our way of connecting to, inserting,
+ *  and removing from the table. It also contains its own main
+ *  method that is only used for debugging purposes
+ */
 public class Database {
     public static void main(String args[]){
         try {

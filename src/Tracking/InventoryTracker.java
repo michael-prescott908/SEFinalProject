@@ -3,6 +3,12 @@ package Tracking;
 import ControllerGUI.*;
 import javax.swing.*;
 
+/**
+ * Class InventoryTracker
+ *  InventoryTracker serves as the main driver of the program. It
+ *  is abstracted down to a single line and also acts as a singleton to
+ *  set its state
+ */
 public class InventoryTracker {
     private static String STATE = "Basic";
     private static RunGUI rgui;

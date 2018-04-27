@@ -5,6 +5,11 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Class: MainView
+ *  MainView inherits from View and serves as the normal
+ *  window that the program starts on
+ */
 public class MainView extends View {
 
     private JTextArea textArea;
@@ -16,10 +21,10 @@ public class MainView extends View {
                                 "This program manages the inventory of\n" +
                                 "a department store through a SQL database!", 5, 20);
         frame = new JFrame("Inventory Tracking Service");
-        frame.add("North", new JLabel("Welcome to the Inventory Tracker, please choose an option"));
+        frame.add("North", new JLabel("                      " +
+                "Welcome to the Inventory Tracker, please choose an option"));
 
         JPanel panel = new JPanel();
-        //panel.setLayout(new BorderLayout());
         buttonAddItem = new JButton("Add Item");
         panel.add(buttonAddItem);
         buttonLookup = new JButton("Item Lookup");
@@ -32,11 +37,11 @@ public class MainView extends View {
 
         frame.add("South", panel);
 
-        JLabel yellowLabel = new JLabel();
-        yellowLabel.setOpaque(true);
-        yellowLabel.setBackground(new Color(145, 245, 215));
-        yellowLabel.setPreferredSize(new Dimension(200, 180));
-        frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+        JLabel jLabel = new JLabel();
+        jLabel.setOpaque(true);
+        jLabel.setBackground(new Color(145, 245, 215));
+        jLabel.setPreferredSize(new Dimension(200, 180));
+        frame.getContentPane().add(jLabel, BorderLayout.CENTER);
 
         frame.addWindowListener(new MainView.CloseListener());
         frame.setSize(500, 300);
